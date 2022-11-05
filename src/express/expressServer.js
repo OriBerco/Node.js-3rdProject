@@ -23,8 +23,10 @@ server.get('/instrument/getbyid', authenticateMusician , getInstrumentCardById)
 server.put('/instrument/update', authenticateMusician, updateInstrumentCardById)
 server.delete('/instrument/deleteOne', authenticateMusician, deleteOneInstrumentCard)
 server.get('/instrument/getall', authenticateMusician, getAllUserInstruments)
-server.get('/get', (req,res)=>{
+server.get('/', (req,res)=>{
     res.json('its on bitch')
 })
 
-server.listen(3000, ()=> console.log('Express is listening'));
+server.listen(3000, () =>
+  console.log("Express is listening on http://localhost:3000/")
+);
